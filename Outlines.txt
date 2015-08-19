@@ -1,0 +1,30 @@
+Group Chatroom
+
+1. Create index.ejs
+
+2. Create a div showing user name submission. 
+	i. Need a socket emit to send user name to server. Socket.emit : "newName".
+	ii. Need if else to check if user name exists for that socket id. If yes, go to step: . If no, show the prompt asking for name. (optional)
+
+3. Create Conversion Board div.
+	i. socket.emit : "send_message" when send button is clicked with message. Send their "name", "message" and "time". Check for empty message.
+	ii.  socket.on : "all_messages". Keep listening for new messages. Append HTML to chat div ID = "board".
+	iii. Leave room button? Socket.emit : "leave", then close window or some getting chats. 
+
+4. Create server.js
+	i. Listening:
+		a. New user:
+			I. Listen for socket.on : "newName". If new name, io.emit : "welcome_new_user". Append HTML? Or store into the message array.
+			III. If new socket.id established, io.emit : "all_messages".
+			IV. If socket.on : "send_message", io.emit : "all_messages".
+
+
+
+            $('button').click(function (){
+                  socket.emit("posting_form", {
+                    name: $('#name').val(),
+                    location: $('#location').val(),
+                    language: $('#language').val(),
+                    comment: $('#comment').val()
+                  });
+              });

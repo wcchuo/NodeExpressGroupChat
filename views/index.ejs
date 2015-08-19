@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title>Group Chat</title>
+    <link href='style.css' type="text/css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+          $(document).ready(function (){
+              var socket = io.connect();
+              $("div#chatboard").hide();
+
+              $('button#namesend').click(function (){
+                  var x = new Date(); 
+                  var y = x.getFullYear(); 
+                  var mo = x.getMonth()+1; 
+                  var d = x.getDate(); 
+                  var h = x.getHours(); 
+                  var m = x.getMinutes(); 
+                  var s = x.getSeconds(); 
+                  socket.emit("name", {
+                    name: $('#name').val(),
+                    time: mo+"/"+d+", "+h+":"+m
+                  });
+                  $("div#hiddenName" ).html("<input id='chatname' type='hidden' value='"+ $('#name').val() +"'>");
+                  
+                  $("div#welcome").hide();
+                  $("div#chatboard").show();
+              });
+
+
+              $('button#send').click(function (){
+                  var x = new Date(); 
+                  var y = x.getFullYear(); 
+                  var mo = x.getMonth()+1; 
+                  var d = x.getDate(); 
+                  var h = x.getHours(); 
+                  var m = x.getMinutes(); 
+                  var s = x.getSeconds(); 
+                  socket.emit("send_message", {
+                    message: $('#message').val(),
+                    name: $('#chatname').val(),
+                    time: mo+"/"+d+", "+h+":"+m
+                  });
+              });
+              socket.on('welcome_new_user', function (data){
+                  $( "span#wellcome_message" ).html(data.wellcome_message);
+              });
+              
+              socket.on('all_messages', function (data){
+                  $( "div#all_messages" ).html(data.messages);
+              });
+
+
+          })
+    </script>
+</head>
+<body>
+    <div id='welcome' class="container login-box">
+        <h1>Join Group Chat</h1>
+        <input type='text' id='name' placeholder='Please type your name'/>
+        <div class="text-center"><button id='namesend' class='button pull-right'>Send</button></div>
+    </div>
+    
+    <div id='chatboard' class="container">
+        <div class='text-right'><a class='button pull-right btn-leave' href='/'>X</a></div>        
+        <h1>Group Chat</h1>
+        <h4><span id='wellcome_message'></span></h4>
+        <div id='all_messages'></div>
+        <textarea placeholder='Enter your message' id='message' rows='2'></textarea/>
+        <div id='hiddenName'></div>
+        <div class="text-center"><button id='send' class='button pull-right'>Send</button></div>
+    </div>
+</body>
+</html>

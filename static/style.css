@@ -1,0 +1,171 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+
+body {
+	margin: 0 auto;
+	padding: 0;
+	font-size: 14px;
+	font-family: "Lato";
+	font-weight: 300;
+	background-image: url(http://cdn.wonderfulengineering.com/wp-content/uploads/2014/07/background-wallpapers-32.jpg);
+  	background-position: center center;
+ 	background-repeat: no-repeat;
+  	background-attachment: fixed;
+ 	background-size: cover;
+ 	background-color:#464646;
+}
+
+h1,h2,h3,h4 {
+	font-family: "Lato";
+	font-weight: 300;
+	text-align: center;
+	position: relative;
+	margin: 0.5em;
+}
+
+h3 {
+	position: relative;
+	top: -20px;
+	font-size: 22px;
+}
+
+.container {
+	margin: 20 auto;
+	min-width: 300px;
+	max-width: 500px;
+	padding: 30px;
+	border: 1px solid silver;
+	border-radius: 8px;
+	background-color: white;
+	box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.75); 
+}
+
+.login-box {
+	top:25%;
+	position: relative;
+}
+
+input, select, textarea {
+	width: 100%;
+	font-size: 14px;
+	font-family: "Lato";
+	font-weight: 400;
+	line-height: 1.5em;
+	padding: 3px 5px;
+	border-radius: 4px;
+	border: 1px solid silver;
+}
+
+label {
+	font-size: 14px;
+	font-family: "Lato";
+	font-weight: 700;
+	line-height: 25px;
+}
+
+.button {
+	min-width: 100px;
+	background-color: #005b96;
+	color: white;
+	margin: 10px 0;
+	padding: 5px;
+	display: inline-block;
+	position: relative;
+	border-radius: 4px;
+	font-size: 14px;
+	font-family: "Lato";
+	font-weight: 300;
+	text-align: center;
+	text-decoration: none;
+	border: 0px;
+}
+
+.btn-leave {
+	min-width: 30px !important;
+}
+
+.btn-lg {
+	font-size: 25px !important;
+	margin: 10px auto !important;	
+	padding: 30px !important;
+}
+
+.btn-red {
+	background-color: red;
+}
+
+.button:hover {
+	background-color: red;
+}
+
+.button:active {
+	background-color: #800000;
+}
+
+.pull-right {
+	right: 0px;
+}
+
+.center {
+	left:30%;
+}
+
+#response {
+	margin: 20 auto;
+	min-width: 300px;
+	max-width: 500px;
+	padding: 30px;
+	border: 1px solid silver;
+	border-radius: 8px;
+	background-color: #cfcfcf;
+}
+
+#time {
+	color: red;
+}
+
+.text-center {
+	text-align: center;
+	width: 100%
+}
+
+.text-right {
+	text-align: right;
+	width: 100%
+}
+
+#all_messages {
+	overflow: auto;
+	border-radius: 4px;
+	background-color: #333;
+	height: 300px;
+	width: 90%;
+	margin-bottom: 20px;
+	color: white;
+	padding: 5%;
+	font-family: "Lato";
+	font-size: 14px;
+	font-weight: 100 !important;
+}
+
+.name {
+	font-size: 12px;
+	font-style: italic;
+	font-weight: 100;
+}
+
+.message {
+	position: relative;
+	margin: -2px 0 10px 0;
+	font-size: 18px;
+	font-weight: 300;
+	color: #EBF5C6;
+}
+
+.welcome {
+	width: 95%;
+	background-color: #4A4A4A;
+	font-size: 13px;
+	padding: 5px 0px 5px 20px;
+	margin: 5px 0px;
+	border-radius: 3px;
+}
