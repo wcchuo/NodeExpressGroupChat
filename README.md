@@ -1,2 +1,1 @@
-# MEANGroupChat
 # NodeExpressGroupChat
